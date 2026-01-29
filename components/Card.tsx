@@ -11,9 +11,9 @@ export function Card({ className, variant = "default", children, ...props }: Car
       className={cn(
         "rounded-card p-6 transition-all duration-200",
         {
-          "bg-surface": variant === "default",
-          "bg-surface border border-border": variant === "bordered",
-          "bg-surface shadow-soft hover:shadow-soft-lg": variant === "elevated",
+          "bg-white/70": variant === "default",
+          "bg-white/70 border border-border": variant === "bordered",
+          "bg-white/70 border border-border hover:border-primary hover:-translate-y-0.5": variant === "elevated",
         },
         className
       )}

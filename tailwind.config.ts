@@ -11,8 +11,8 @@ const config: Config = {
       colors: {
         // Brand colors - premium HR / executive
         background: {
-          DEFAULT: "#FBFBF8", // warm off-white
-          alt: "#F4F6F8", // very subtle contrast
+          DEFAULT: "#FBFBF7", // warm off-white (as specified)
+          alt: "#F3F5F6", // very subtle contrast (as specified)
         },
         surface: "#FFFFFF",
         text: {
@@ -25,7 +25,7 @@ const config: Config = {
         primary: {
           DEFAULT: "#0F3D3E", // deep teal accent
           hover: "#0C2D2E", // slightly darker hover
-          light: "rgba(15,61,62,0.08)", // soft fill
+          light: "rgba(15,61,62,0.10)", // soft fill (as specified)
         },
         secondary: "#64748B", // slate-500
       },

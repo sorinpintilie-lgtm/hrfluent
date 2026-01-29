@@ -4,7 +4,7 @@ import { content } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background-alt py-section-desktop">
+    <footer className="border-t border-border bg-background py-section-desktop">
       <Container>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>

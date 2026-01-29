@@ -10,7 +10,7 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ quote, author, role, company, className }: TestimonialCardProps) {
   return (
-    <div className={cn("rounded-card border border-border bg-surface p-8 shadow-soft", className)}>
+    <div className={cn("rounded-card border border-border bg-white/70 p-8 hover:border-primary hover:-translate-y-0.5 transition-all duration-200", className)}>
       <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
         <svg className="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>

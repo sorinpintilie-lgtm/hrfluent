@@ -11,7 +11,7 @@ export function FeatureCard({ icon, title, description, className, ...props }: F
   return (
     <div
       className={cn(
-        "rounded-card border border-border bg-surface p-6 shadow-soft hover:border-primary hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-200",
+        "rounded-card border border-border bg-white/70 p-6 hover:border-primary hover:-translate-y-0.5 transition-all duration-200",
         className
       )}
       {...props}

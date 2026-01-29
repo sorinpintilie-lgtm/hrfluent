@@ -19,7 +19,7 @@ export function ProcessStrip({ steps, className }: ProcessStripProps) {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="relative rounded-card border border-border bg-surface p-6 shadow-soft"
+              className="relative rounded-card border border-border bg-white/70 p-6 hover:border-primary hover:-translate-y-0.5 transition-all duration-200"
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-2xl font-semibold text-primary">
                 {step.number}

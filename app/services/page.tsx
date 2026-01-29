@@ -19,22 +19,25 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="py-section-desktop hero-gradient">
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-          >
-            <div className="mb-4 flex items-center gap-2">
-              <div className="h-px w-8 bg-primary" />
-              <div className="h-2 w-2 rounded-full bg-primary" />
-            </div>
-            <h1 className="mb-6 font-serif text-[34px] md:text-[52px] lg:text-[60px] leading-[1.05]">
-              {content.services.hero.h1}
-            </h1>
-            <p className="max-w-2xl text-[16px] md:text-[18px] leading-[1.7] text-muted">
-              {content.services.hero.intro}
-            </p>
-          </motion.div>
+          <div className="glass-card rounded-card border border-border p-8 md:p-12 shadow-soft">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+            >
+              <div className="mb-6 flex items-center gap-2">
+                <div className="h-px w-8 bg-primary" />
+                <div className="h-2 w-2 rounded-full bg-primary" />
+              </div>
+              <h1 className="mb-6 font-serif text-[34px] md:text-[52px] lg:text-[60px] leading-[1.05]">
+                {content.services.hero.h1}
+              </h1>
+              <div className="h-px w-24 bg-primary mb-6" />
+              <p className="max-w-2xl text-[16px] md:text-[18px] leading-[1.7] text-muted">
+                {content.services.hero.intro}
+              </p>
+            </motion.div>
+          </div>
         </Container>
       </section>
 

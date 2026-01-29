@@ -37,117 +37,120 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="py-section-desktop sm:py-section-desktop hero-gradient">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            {/* Left side: H1 + subline + CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45 }}
-              className="flex flex-col justify-center"
-            >
-              <div className="mb-4 flex items-center gap-2">
-                <div className="h-px w-8 bg-primary" />
-                <div className="h-2 w-2 rounded-full bg-primary" />
-              </div>
-              <h1 className="mb-6 font-serif text-[34px] md:text-[52px] lg:text-[60px] leading-[1.05]">
-                {content.home.hero.h1.split('<br>').map((line, index) => (
-                  <span key={index}>
-                    {line}
-                    {index < content.home.hero.h1.split('<br>').length - 1 && <br />}
+          <div className="glass-card rounded-card border border-border p-8 md:p-12 shadow-soft">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+              {/* Left side: H1 + subline + CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45 }}
+                className="flex flex-col justify-center"
+              >
+                <div className="mb-6 flex items-center gap-2">
+                  <div className="h-px w-8 bg-primary" />
+                  <div className="h-2 w-2 rounded-full bg-primary" />
+                </div>
+                <h1 className="mb-6 font-serif text-[34px] md:text-[52px] lg:text-[60px] leading-[1.05]">
+                  {content.home.hero.h1.split('<br>').map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      {index < content.home.hero.h1.split('<br>').length - 1 && <br />}
+                    </span>
+                  ))}
+                </h1>
+                <div className="h-px w-24 bg-primary mb-6" />
+                <p className="mb-8 text-[16px] md:text-[18px] leading-[1.7] text-muted lg:text-lg">
+                  {content.home.hero.body}
+                </p>
+                <div className="mb-8 flex flex-wrap gap-4">
+                  <LinkButton size="lg" href="/contact">
+                    {content.home.hero.cta}
+                  </LinkButton>
+                </div>
+                {/* Trust row with pills */}
+                <div className="flex flex-wrap gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-background/50 border border-border px-4 py-2 text-sm text-muted">
+                    <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
+                    </svg>
+                    Fractional HR
                   </span>
-                ))}
-              </h1>
-              <p className="mb-8 text-[16px] md:text-[18px] leading-[1.7] text-muted lg:text-lg">
-                {content.home.hero.body}
-              </p>
-              <div className="mb-8 flex flex-wrap gap-4">
-                <LinkButton size="lg" href="/contact">
-                  {content.home.hero.cta}
-                </LinkButton>
-              </div>
-              {/* Trust row with pills */}
-              <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full bg-surface border border-border px-4 py-2 text-sm text-muted">
-                  <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
-                  </svg>
-                  Fractional HR
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-surface border border-border px-4 py-2 text-sm text-muted">
-                  <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
-                  </svg>
-                  Remote-first
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-surface border border-border px-4 py-2 text-sm text-muted">
-                  <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
-                  </svg>
-                  Data-driven
-                </span>
-              </div>
-            </motion.div>
+                  <span className="inline-flex items-center gap-2 rounded-full bg-background/50 border border-border px-4 py-2 text-sm text-muted">
+                    <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
+                    </svg>
+                    Remote-first
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-full bg-background/50 border border-border px-4 py-2 text-sm text-muted">
+                    <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
+                    </svg>
+                    Data-driven
+                  </span>
+                </div>
+              </motion.div>
 
-            {/* Right side: Credibility card stack */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.15 }}
-              className="relative flex items-center justify-center"
-            >
-              <div className="relative h-full w-full">
-                {/* Main card */}
-                <div className="relative h-[400px] w-full rounded-card bg-surface border border-border p-8 shadow-soft-xl">
-                  <div className="absolute -top-4 -left-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
-                  <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
-                  
-                  {/* Credibility cards */}
-                  <div className="relative z-10 space-y-6">
-                    <div className="rounded-lg bg-background/50 border border-border p-4">
-                      <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                          <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
-                          </svg>
-                        </div>
-                        <div>
-                          <h4 className="font-serif font-medium">Strategy</h4>
-                          <p className="text-sm text-muted">Aligning HR with business goals</p>
+              {/* Right side: Credibility card stack */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.15 }}
+                className="relative flex items-center justify-center"
+              >
+                <div className="relative h-full w-full">
+                  {/* Main card */}
+                  <div className="relative h-[400px] w-full rounded-card bg-background/50 border border-border p-8">
+                    <div className="absolute -top-4 -left-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
+                    <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
+                    
+                    {/* Credibility cards */}
+                    <div className="relative z-10 space-y-6">
+                      <div className="rounded-lg bg-white/70 border border-border p-4">
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                            <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
+                            </svg>
+                          </div>
+                          <div>
+                            <h4 className="font-serif font-medium">Strategy</h4>
+                            <p className="text-sm text-muted">Aligning HR with business goals</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    <div className="rounded-lg bg-background/50 border border-border p-4">
-                      <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                          <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
-                          </svg>
-                        </div>
-                        <div>
-                          <h4 className="font-serif font-medium">Compliance</h4>
-                          <p className="text-sm text-muted">Mitigating legal risks</p>
+                      
+                      <div className="rounded-lg bg-white/70 border border-border p-4">
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                            <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
+                            </svg>
+                          </div>
+                          <div>
+                            <h4 className="font-serif font-medium">Compliance</h4>
+                            <p className="text-sm text-muted">Mitigating legal risks</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    <div className="rounded-lg bg-background/50 border border-border p-4">
-                      <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                          <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
-                          </svg>
-                        </div>
-                        <div>
-                          <h4 className="font-serif font-medium">Culture</h4>
-                          <p className="text-sm text-muted">Building engaging workplaces</p>
+                      
+                      <div className="rounded-lg bg-white/70 border border-border p-4">
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                            <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
+                            </svg>
+                          </div>
+                          <div>
+                            <h4 className="font-serif font-medium">Culture</h4>
+                            <p className="text-sm text-muted">Building engaging workplaces</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </Container>
       </section>
@@ -200,7 +203,7 @@ export default function HomePage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.45 }}
           >
-            <div className="rounded-card border border-border bg-surface p-8 shadow-soft">
+            <div className="rounded-card border border-border bg-white/70 p-8">
               <div className="mb-8">
                 <div className="flex items-start gap-6">
                   {/* Vertical accent line with dots */}
@@ -219,7 +222,7 @@ export default function HomePage() {
                       {content.home.who.items.map((item, index) => (
                         <span
                           key={index}
-                          className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm text-muted hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-200"
+                          className="inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-4 py-2 text-sm text-muted hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-200"
                         >
                           <svg
                             width="16"
