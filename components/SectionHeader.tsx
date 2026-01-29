@@ -15,11 +15,11 @@ export function SectionHeader({ eyebrow, title, description, className }: Sectio
           {eyebrow}
         </p>
       )}
-      <h2 className="mb-4 font-serif text-[28px] leading-tight sm:text-[32px] lg:text-[34px]">
+      <h2 className="mb-4 font-serif text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15]">
         {title}
       </h2>
       {description && (
-        <p className="max-w-2xl text-lg leading-relaxed text-muted">
+        <p className="max-w-2xl text-[16px] md:text-[18px] leading-[1.7] text-muted">
           {description}
         </p>
       )}

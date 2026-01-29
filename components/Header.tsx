@@ -22,7 +22,7 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-border bg-[rgba(251,251,248,0.75)] backdrop-blur-[10px]">
         <Container>
           <div className="flex items-center justify-between py-4">
             <Link href="/" className="font-serif text-xl font-medium text-text">

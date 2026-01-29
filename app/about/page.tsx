@@ -17,17 +17,21 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-section-desktop">
+      <section className="py-section-desktop hero-gradient">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
           >
-            <h1 className="mb-6 font-serif text-[40px] leading-tight sm:text-[48px] lg:text-[56px]">
+            <div className="mb-4 flex items-center gap-2">
+              <div className="h-px w-8 bg-primary" />
+              <div className="h-2 w-2 rounded-full bg-primary" />
+            </div>
+            <h1 className="mb-6 font-serif text-[34px] md:text-[52px] lg:text-[60px] leading-[1.05]">
               {content.about.hero.h1}
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-muted">
+            <p className="max-w-2xl text-[16px] md:text-[18px] leading-[1.7] text-muted">
               {content.about.hero.body}
             </p>
           </motion.div>
@@ -37,7 +41,7 @@ export default function AboutPage() {
       <div className="gradient-line" />
 
       {/* About Oana Section */}
-      <section className="py-section-desktop">
+      <section className="py-section-desktop section-alt">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2">
             <motion.div
@@ -50,7 +54,7 @@ export default function AboutPage() {
                 title={content.about.oana.h2}
                 description={content.about.oana.intro}
               />
-              <p className="mb-4 text-base leading-relaxed text-muted">
+              <p className="mb-4 text-[16px] md:text-[18px] leading-[1.7] text-muted">
                 {content.about.oana.blend}
               </p>
               <ul className="mb-8 space-y-2">
@@ -61,7 +65,7 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mb-4 text-base leading-relaxed text-muted">
+              <p className="mb-4 text-[16px] md:text-[18px] leading-[1.7] text-muted">
                 {content.about.oana.initiatives}
               </p>
               <ul className="space-y-2">
@@ -81,7 +85,7 @@ export default function AboutPage() {
               transition={{ duration: 0.45, delay: 0.15 }}
             >
               <Card variant="elevated" className="h-full">
-                <h3 className="mb-6 font-serif text-2xl">Capabilities</h3>
+                <h3 className="mb-6 font-serif text-[20px] md:text-[24px]">Capabilities</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <svg
@@ -235,13 +239,13 @@ export default function AboutPage() {
             transition={{ duration: 0.45 }}
           >
             <Card variant="bordered" className="max-w-3xl">
-              <h2 className="mb-4 font-serif text-[28px] sm:text-[32px]">
+              <h2 className="mb-4 font-serif text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15]">
                 {content.about.philosophy.h2}
               </h2>
-              <p className="mb-6 text-lg text-muted">
+              <p className="mb-6 text-[16px] md:text-[18px] leading-[1.7] text-muted">
                 {content.about.philosophy.intro}
               </p>
-              <p className="mb-4 text-base text-muted">
+              <p className="mb-4 text-[16px] md:text-[18px] leading-[1.7] text-muted">
                 {content.about.philosophy.belief}
               </p>
               <ul className="space-y-3">

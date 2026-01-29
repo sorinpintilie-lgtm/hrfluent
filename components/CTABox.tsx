@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { LinkButton } from "./LinkButton";
 import { Container } from "./Container";
 
 interface CTABoxProps {
@@ -10,20 +10,24 @@ interface CTABoxProps {
 
 export function CTABox({ headline, cta, ctaHref = "/contact", onCtaClick }: CTABoxProps) {
   return (
-    <section className="bg-primary py-section-desktop text-white">
+    <section className="bg-background-alt py-section-desktop">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mb-6 font-serif text-[32px] leading-tight sm:text-[40px]">
-            {headline}
-          </h2>
-          <Button
-            variant="secondary"
-            size="lg"
-            onClick={onCtaClick}
-            className="mt-8"
-          >
-            {cta}
-          </Button>
+        <div className="mx-auto max-w-2xl rounded-card border border-border bg-surface p-8 shadow-soft relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/10 via-primary/30 to-primary/10" />
+          <div className="text-center relative z-10">
+            <h2 className="mb-6 font-serif text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] text-text">
+              {headline}
+            </h2>
+            <LinkButton
+              variant="primary"
+              size="lg"
+              href={ctaHref}
+              onClick={onCtaClick}
+              className="mt-8"
+            >
+              {cta}
+            </LinkButton>
+          </div>
         </div>
       </Container>
     </section>

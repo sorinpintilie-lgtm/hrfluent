@@ -9,34 +9,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand colors - warm off-white background, near-black text, deep teal accent
+        // Brand colors - premium HR / executive
         background: {
-          DEFAULT: "#FAFAF8", // warm off-white
-          alt: "#F5F5F3", // slightly darker for contrast
+          DEFAULT: "#FBFBF8", // warm off-white
+          alt: "#F4F6F8", // very subtle contrast
         },
         surface: "#FFFFFF",
         text: {
-          DEFAULT: "#1A1A1A", // near-black
-          muted: "#6B7280", // gray-500
-          light: "#9CA3AF", // gray-400
+          DEFAULT: "#121417", // primary text
+          muted: "#4B5563", // muted text
+          light: "#9CA3AF", // light text
         },
-        muted: "#6B7280", // gray-500
-        border: "#E5E7EB",
+        muted: "#4B5563", // muted text
+        border: "rgba(17,24,39,0.10)", // hairline borders
         primary: {
-          DEFAULT: "#0D9488", // deep teal
-          hover: "#0F766E",
-          light: "#CCFBF1", // teal-100
+          DEFAULT: "#0F3D3E", // deep teal accent
+          hover: "#0C2D2E", // slightly darker hover
+          light: "rgba(15,61,62,0.08)", // soft fill
         },
         secondary: "#64748B", // slate-500
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["DM Serif Display", "Fraunces", "Georgia", "serif"],
+        sans: ["Inter", "Source Sans 3", "system-ui", "sans-serif"],
+        serif: ["Fraunces", "Playfair Display", "Georgia", "serif"],
       },
       borderRadius: {
-        card: "16px",
+        card: "20px",
         button: "999px",
-        lg: "20px",
+        lg: "24px",
       },
       boxShadow: {
         soft: "0 2px 8px rgba(0, 0, 0, 0.04)",
@@ -45,11 +45,12 @@ const config: Config = {
       },
       spacing: {
         "section-desktop": "120px",
-        "section-mobile": "80px",
+        "section-mobile": "72px",
         "container": "1200px",
       },
       maxWidth: {
         container: "1200px",
+        readable: "70ch",
       },
       gridTemplateColumns: {
         '12': 'repeat(12, minmax(0, 1fr))',

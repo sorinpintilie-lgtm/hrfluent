@@ -14,6 +14,7 @@ import { ProcessStrip } from "@/components/ProcessStrip";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { Accordion } from "@/components/Accordion";
 import { CTABox } from "@/components/CTABox";
+import { LogoTicker } from "@/components/LogoTicker";
 import { content } from "@/lib/content";
 
 const fadeInUp = {
@@ -34,7 +35,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-section-desktop sm:py-section-desktop">
+      <section className="py-section-desktop sm:py-section-desktop hero-gradient">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Left side: H1 + subline + CTA */}
@@ -44,19 +45,28 @@ export default function HomePage() {
               transition={{ duration: 0.45 }}
               className="flex flex-col justify-center"
             >
-              <h1 className="mb-4 font-serif text-4xl md:text-5xl lg:text-6xl leading-tight">
-                {content.home.hero.h1}
+              <div className="mb-4 flex items-center gap-2">
+                <div className="h-px w-8 bg-primary" />
+                <div className="h-2 w-2 rounded-full bg-primary" />
+              </div>
+              <h1 className="mb-6 font-serif text-[34px] md:text-[52px] lg:text-[60px] leading-[1.05]">
+                {content.home.hero.h1.split('<br>').map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    {index < content.home.hero.h1.split('<br>').length - 1 && <br />}
+                  </span>
+                ))}
               </h1>
-              <p className="mb-6 text-lg leading-relaxed text-muted lg:text-xl">
+              <p className="mb-8 text-[16px] md:text-[18px] leading-[1.7] text-muted lg:text-lg">
                 {content.home.hero.body}
               </p>
-              <div className="mb-8 flex flex-wrap gap-3">
+              <div className="mb-8 flex flex-wrap gap-4">
                 <LinkButton size="lg" href="/contact">
                   {content.home.hero.cta}
                 </LinkButton>
               </div>
               {/* Trust row with pills */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 rounded-full bg-surface border border-border px-4 py-2 text-sm text-muted">
                   <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
@@ -78,42 +88,64 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Right side: Visual block */}
+            {/* Right side: Credibility card stack */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.15 }}
               className="relative flex items-center justify-center"
             >
-              <div className="relative h-full w-full rounded-card bg-gradient-to-br from-primary/5 via-primary/10 to-secondary/5 p-8 shadow-soft-xl">
-                <div className="absolute inset-0 rounded-card border border-border" />
-                <svg
-                  className="h-full w-full text-primary/20"
-                  viewBox="0 0 400 300"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="200" cy="150" r="80" stroke="currentColor" strokeWidth="1" />
-                  <circle cx="200" cy="150" r="120" stroke="currentColor" strokeWidth="0.5" />
-                  <circle cx="200" cy="150" r="160" stroke="currentColor" strokeWidth="0.5" />
-                  <path
-                    d="M200 70 L200 230"
-                    stroke="currentColor"
-                    strokeWidth="0.5"
-                    strokeDasharray="4 4"
-                  />
-                  <path
-                    d="M120 150 L280 150"
-                    stroke="currentColor"
-                    strokeWidth="0.5"
-                    strokeDasharray="4 4"
-                  />
-                  <circle cx="200" cy="150" r="8" fill="currentColor" />
-                  <circle cx="280" cy="90" r="4" fill="currentColor" opacity="0.5" />
-                  <circle cx="120" cy="210" r="4" fill="currentColor" opacity="0.5" />
-                  <circle cx="280" cy="210" r="4" fill="currentColor" opacity="0.5" />
-                  <circle cx="120" cy="90" r="4" fill="currentColor" opacity="0.5" />
-                </svg>
+              <div className="relative h-full w-full">
+                {/* Main card */}
+                <div className="relative h-[400px] w-full rounded-card bg-surface border border-border p-8 shadow-soft-xl">
+                  <div className="absolute -top-4 -left-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
+                  <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
+                  
+                  {/* Credibility cards */}
+                  <div className="relative z-10 space-y-6">
+                    <div className="rounded-lg bg-background/50 border border-border p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                          <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="font-serif font-medium">Strategy</h4>
+                          <p className="text-sm text-muted">Aligning HR with business goals</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="rounded-lg bg-background/50 border border-border p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                          <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="font-serif font-medium">Compliance</h4>
+                          <p className="text-sm text-muted">Mitigating legal risks</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="rounded-lg bg-background/50 border border-border p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                          <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 className="font-serif font-medium">Culture</h4>
+                          <p className="text-sm text-muted">Building engaging workplaces</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -138,7 +170,7 @@ export default function HomePage() {
             className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2"
           >
             {content.home.valueProps.map((prop, index) => (
-              <motion.div key={index} variants={fadeInUp}>
+              <motion.div key={index} variants={fadeInUp} className="h-full">
                 <FeatureCard
                   icon={
                     <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,6 +179,7 @@ export default function HomePage() {
                   }
                   title={prop.title}
                   description={prop.body}
+                  className="h-full"
                 />
               </motion.div>
             ))}
@@ -167,30 +200,55 @@ export default function HomePage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.45 }}
           >
-            <Card variant="bordered">
-              <div className="space-y-4">
-                {content.home.who.items.map((item, index) => (
-                  <IconBadge
-                    key={index}
-                    icon={
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8 1L10 6L15 6L11 9L12 14L8 11L4 14L5 9L1 6L6 6L8 1Z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    }
-                    label={item}
-                  />
-                ))}
+            <div className="rounded-card border border-border bg-surface p-8 shadow-soft">
+              <div className="mb-8">
+                <div className="flex items-start gap-6">
+                  {/* Vertical accent line with dots */}
+                  <div className="flex flex-col gap-6">
+                    <div className="h-px w-8 bg-primary" />
+                    <div className="flex flex-col gap-4">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                    </div>
+                  </div>
+                  
+                  {/* Partners chips */}
+                  <div className="flex-1">
+                    <div className="flex flex-wrap gap-3">
+                      {content.home.who.items.map((item, index) => (
+                        <span
+                          key={index}
+                          className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm text-muted hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-200"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 1L10 6L15 6L11 9L12 14L8 11L4 14L5 9L1 6L6 6L8 1Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </Card>
+              
+              {/* Logo Ticker */}
+              <div className="mt-8 pt-8 border-t border-border">
+                <h4 className="mb-6 text-sm font-medium uppercase tracking-wider text-primary text-center">
+                  Trusted by innovative companies
+                </h4>
+                <LogoTicker />
+              </div>
+            </div>
           </motion.div>
         </Container>
       </section>

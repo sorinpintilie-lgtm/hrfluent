@@ -12,7 +12,7 @@ export const content = {
   },
   home: {
     hero: {
-      h1: "Strategic HR leadership for growing, people-first organizations",
+      h1: "Strategic HR leadership<br>for growing, people-first organizations",
       body: "HRFluent helps organizations build compliant, inclusive, and high-performing workplaces through hands-on people leadership, not templates or theory. From compliance and people operations to culture, growth, and compensation strategy, HRFluent partners with leadership teams to turn HR into a true business driver.",
       sub: "Led by senior HR executive Oana Breen, HRFluent delivers fractional HR leadership and advisory services designed for modern, remote-first and growth-stage organizations.",
       cta: "Let's talk about your people strategy",

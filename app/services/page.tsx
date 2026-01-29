@@ -17,17 +17,21 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-section-desktop">
+      <section className="py-section-desktop hero-gradient">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
           >
-            <h1 className="mb-6 font-serif text-[40px] leading-tight sm:text-[48px] lg:text-[56px]">
+            <div className="mb-4 flex items-center gap-2">
+              <div className="h-px w-8 bg-primary" />
+              <div className="h-2 w-2 rounded-full bg-primary" />
+            </div>
+            <h1 className="mb-6 font-serif text-[34px] md:text-[52px] lg:text-[60px] leading-[1.05]">
               {content.services.hero.h1}
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-muted">
+            <p className="max-w-2xl text-[16px] md:text-[18px] leading-[1.7] text-muted">
               {content.services.hero.intro}
             </p>
           </motion.div>
@@ -44,6 +48,7 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.45 }}
+            className="max-w-3xl mx-auto"
           >
             <Accordion items={content.services.sections} />
           </motion.div>
@@ -53,7 +58,7 @@ export default function ServicesPage() {
       <div className="gradient-line" />
 
       {/* How Engagement Works */}
-      <section className="py-section-desktop">
+      <section className="py-section-desktop section-alt">
         <Container>
           <SectionHeader
             title={content.services.engagement.title}
@@ -74,7 +79,7 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.45, delay: index * 0.1 }}
-                className="rounded-card border border-border bg-surface p-6"
+                className="rounded-card border border-border bg-surface p-6 shadow-soft hover:border-primary hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-200"
               >
                 <p className="mb-2 text-sm font-medium uppercase tracking-wider text-primary">
                   {item.label}

@@ -39,17 +39,21 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-section-desktop">
+      <section className="py-section-desktop hero-gradient">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
           >
-            <h1 className="mb-6 font-serif text-[40px] leading-tight sm:text-[48px] lg:text-[56px]">
+            <div className="mb-4 flex items-center gap-2">
+              <div className="h-px w-8 bg-primary" />
+              <div className="h-2 w-2 rounded-full bg-primary" />
+            </div>
+            <h1 className="mb-6 font-serif text-[34px] md:text-[52px] lg:text-[60px] leading-[1.05]">
               {content.contact.hero.h1}
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-muted">
+            <p className="max-w-2xl text-[16px] md:text-[18px] leading-[1.7] text-muted">
               {content.contact.hero.body}
             </p>
           </motion.div>
@@ -59,7 +63,7 @@ export default function ContactPage() {
       <div className="gradient-line" />
 
       {/* Contact Form Section */}
-      <section className="py-section-desktop">
+      <section className="py-section-desktop section-alt">
         <Container>
           <div className="mx-auto max-w-2xl">
             <motion.div
@@ -68,7 +72,7 @@ export default function ContactPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.45 }}
             >
-              <p className="mb-8 text-center text-lg text-muted">
+              <p className="mb-8 text-center text-[16px] md:text-[18px] leading-[1.7] text-muted">
                 {content.contact.intro}
               </p>
 
@@ -77,7 +81,7 @@ export default function ContactPage() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.45 }}
-                  className="rounded-card border border-border bg-surface p-8 text-center"
+                  className="rounded-card border border-border bg-surface p-8 text-center shadow-soft"
                 >
                   <svg
                     className="mx-auto mb-4 h-16 w-16 text-primary"
@@ -94,11 +98,11 @@ export default function ContactPage() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <h2 className="mb-2 font-serif text-2xl">Thank you!</h2>
+                  <h2 className="mb-2 font-serif text-[20px] md:text-[24px]">Thank you!</h2>
                   <p className="text-muted">{content.contact.form.success}</p>
                 </motion.div>
               ) : (
-                <Card variant="bordered">
+                <Card variant="bordered" className="shadow-soft">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label htmlFor="name" className="mb-2 block text-sm font-medium">
@@ -111,7 +115,7 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="w-full rounded-[14px] border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/35"
                         placeholder="Your name"
                       />
                     </div>
@@ -127,7 +131,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="w-full rounded-[14px] border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/35"
                         placeholder="you@company.com"
                       />
                     </div>
@@ -143,7 +147,7 @@ export default function ContactPage() {
                         required
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="w-full rounded-[14px] border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/35"
                         placeholder="Company name"
                       />
                     </div>
@@ -158,7 +162,7 @@ export default function ContactPage() {
                         required
                         value={formData.teamSize}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="w-full rounded-[14px] border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/35"
                       >
                         <option value="">Select team size</option>
                         <option value="1-10">1-10 employees</option>
@@ -180,7 +184,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleChange}
                         rows={5}
-                        className="w-full rounded-lg border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        className="w-full rounded-[14px] border border-border bg-surface px-4 py-3 text-text transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/35"
                         placeholder="Tell us about your people challenges..."
                       />
                     </div>
