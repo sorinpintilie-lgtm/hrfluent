@@ -9,6 +9,10 @@ import { LinkButton } from "@/components/LinkButton";
 import { Card } from "@/components/Card";
 import { IconBadge } from "@/components/IconBadge";
 import { FeatureCard } from "@/components/FeatureCard";
+import { TrustBar } from "@/components/TrustBar";
+import { ProcessStrip } from "@/components/ProcessStrip";
+import { TestimonialCard } from "@/components/TestimonialCard";
+import { Accordion } from "@/components/Accordion";
 import { CTABox } from "@/components/CTABox";
 import { content } from "@/lib/content";
 
@@ -188,6 +192,101 @@ export default function HomePage() {
               </div>
             </Card>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Process Strip */}
+      <ProcessStrip
+        steps={[
+          {
+            number: 1,
+            title: "Discovery",
+            description: "We start with a deep dive into your organization's people challenges and goals.",
+          },
+          {
+            number: 2,
+            title: "Strategy",
+            description: "Developing a tailored HR strategy aligned with your business objectives.",
+          },
+          {
+            number: 3,
+            title: "Implementation",
+            description: "Executing the plan with ongoing support and continuous improvement.",
+          },
+        ]}
+      />
+
+      {/* Testimonials */}
+      <section className="py-section-desktop">
+        <Container>
+          <SectionHeader
+            title="What Our Clients Say"
+            description="Hear from leaders who transformed their people operations with our guidance."
+          />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <TestimonialCard
+              quote="Working with HRFluent transformed our approach to people operations. Their strategic guidance helped us build a culture that attracts and retains top talent."
+              author="Sarah Johnson"
+              role="CEO"
+              company="TechInnovate"
+            />
+            <TestimonialCard
+              quote="The fractional HR model was perfect for our scale. We got the expertise we needed without the overhead of a full-time HR department."
+              author="Michael Chen"
+              role="Founder"
+              company="StartupX"
+            />
+            <TestimonialCard
+              quote="Their data-driven approach to HR transformed how we make people decisions. We're now more agile and strategic."
+              author="Emily Rodriguez"
+              role="COO"
+              company="Global Solutions"
+            />
+          </div>
+        </Container>
+      </section>
+
+      {/* FAQ Accordion */}
+      <section className="py-section-desktop section-alt">
+        <Container>
+          <SectionHeader
+            title="Frequently Asked Questions"
+            description="Everything you need to know about fractional HR and our services."
+          />
+          <div className="mx-auto max-w-3xl">
+            <Accordion
+              items={[
+                {
+                  title: "What is fractional HR?",
+                  items: [
+                    "Fractional HR is a flexible service model where you get access to HR expertise on a part-time or project basis.",
+                    "Perfect for small and medium-sized businesses that need HR support without hiring a full-time director.",
+                  ],
+                },
+                {
+                  title: "How is fractional HR different from traditional HR?",
+                  items: [
+                    "Traditional HR is typically a full-time role focused on day-to-day operations.",
+                    "Fractional HR takes a strategic approach, focusing on long-term people strategy and business alignment.",
+                  ],
+                },
+                {
+                  title: "What industries do you work with?",
+                  items: [
+                    "We work with a wide range of industries including tech, professional services, e-commerce, and more.",
+                    "Our approach is tailored to your specific industry challenges and business model.",
+                  ],
+                },
+                {
+                  title: "How do you measure success?",
+                  items: [
+                    "We track key metrics like employee engagement, retention rates, time-to-hire, and HR compliance.",
+                    "Success is measured by tangible business outcomes tied to your people strategy.",
+                  ],
+                },
+              ]}
+            />
+          </div>
         </Container>
       </section>
 

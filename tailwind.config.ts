@@ -20,6 +20,7 @@ const config: Config = {
           muted: "#6B7280", // gray-500
           light: "#9CA3AF", // gray-400
         },
+        muted: "#6B7280", // gray-500
         border: "#E5E7EB",
         primary: {
           DEFAULT: "#0D9488", // deep teal

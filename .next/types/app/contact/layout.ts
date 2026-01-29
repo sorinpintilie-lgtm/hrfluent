@@ -1,4 +1,4 @@
-// File: C:\Users\pinti\OneDrive\Desktop\Coduri\wbsites\HRFluent\app\contact\layout.tsx
+// File: c:\Users\pinti\OneDrive\Desktop\Coduri\wbsites\HRFluent\app\contact\layout.tsx
 import * as entry from '../../../../app/contact/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
