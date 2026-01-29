@@ -102,7 +102,7 @@ export default function HomePage() {
                     <div className="absolute -top-4 -left-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
                     <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
                     <img
-                      src="/liftapp (7).png"
+                      src="/liftapp-7.png"
                       alt="HRFluent - Professional HR Consulting"
                       className="relative z-10 h-full w-full object-cover"
                     />

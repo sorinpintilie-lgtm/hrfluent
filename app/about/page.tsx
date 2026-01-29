@@ -90,7 +90,7 @@ export default function AboutPage() {
             >
               <div className="relative h-[400px] rounded-card overflow-hidden border border-border bg-white/70 shadow-soft">
                 <img
-                  src="/liftapp (4).jpeg"
+                  src="/liftapp-4.jpeg"
                   alt="Oana Breen - Professional"
                   className="h-full w-full object-cover"
                 />
@@ -316,14 +316,14 @@ export default function AboutPage() {
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="relative h-[400px] rounded-card overflow-hidden border border-border bg-white/70">
                     <img
-                      src="/liftapp (4).jpeg"
+                      src="/liftapp-4.jpeg"
                       alt="Oana Breen - Professional"
                       className="h-full w-full object-cover"
                     />
                   </div>
                   <div className="relative h-[400px] rounded-card overflow-hidden border border-border bg-white/70">
                     <img
-                      src="/liftapp (7).png"
+                      src="/liftapp-7.png"
                       alt="Oana Breen - Consultation"
                       className="h-full w-full object-cover"
                     />
