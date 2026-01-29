@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --font-inter: "Inter", system-ui, sans-serif;
+    --font-sans: "Inter", system-ui, sans-serif;
     --font-serif: "DM Serif Display", "Fraunces", Georgia, serif;
   }
 
@@ -16,6 +16,35 @@
     @apply bg-background text-text antialiased;
   }
 
+  /* Typography base styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-[1.1];
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-[1.2];
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    @apply text-base leading-relaxed text-muted;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  a:hover {
+    @apply underline decoration-primary decoration-2 underline-offset-2;
+  }
+
   /* Subtle background noise */
   body::before {
     content: "";
@@ -25,7 +54,7 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: 0.4;
+    opacity: 0.3;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     z-index: -1;
   }
@@ -40,25 +69,29 @@
     background: linear-gradient(90deg, transparent, #E5E7EB, transparent);
     height: 1px;
   }
-}
 
-/* Focus styles for accessibility */
-*:focus-visible {
-  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
-}
+  .section-alt {
+    @apply bg-background-alt;
+  }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
 
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
