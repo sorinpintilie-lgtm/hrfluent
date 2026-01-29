@@ -98,7 +98,7 @@ export default function HomePage() {
                 className="relative flex items-center justify-center"
               >
                 <div className="relative h-full w-full">
-                  <div className="relative h-[400px] w-full rounded-card overflow-hidden border border-border bg-white/70 shadow-soft">
+                  <div className="relative h-[650px] w-full rounded-card overflow-hidden border border-border bg-white/70 shadow-soft">
                     <div className="absolute -top-4 -left-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
                     <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
                     <img

@@ -88,7 +88,7 @@ export default function AboutPage() {
               transition={{ duration: 0.45, delay: 0.15 }}
               className="flex flex-col gap-6"
             >
-              <div className="relative h-[400px] rounded-card overflow-hidden border border-border bg-white/70 shadow-soft">
+              <div className="relative h-[650px] rounded-card overflow-hidden border border-border bg-white/70 shadow-soft">
                 <img
                   src="/liftapp-4.jpeg"
                   alt="Oana Breen - Professional"
