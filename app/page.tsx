@@ -90,7 +90,7 @@ export default function HomePage() {
                 </div>
               </motion.div>
 
-              {/* Right side: Credibility card stack */}
+              {/* Right side: Hero Image */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -98,55 +98,14 @@ export default function HomePage() {
                 className="relative flex items-center justify-center"
               >
                 <div className="relative h-full w-full">
-                  {/* Main card */}
-                  <div className="relative h-[400px] w-full rounded-card bg-background/50 border border-border p-8">
+                  <div className="relative h-[400px] w-full rounded-card overflow-hidden border border-border bg-white/70 shadow-soft">
                     <div className="absolute -top-4 -left-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
                     <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
-                    
-                    {/* Credibility cards */}
-                    <div className="relative z-10 space-y-6">
-                      <div className="rounded-lg bg-white/70 border border-border p-4">
-                        <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                            <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <h4 className="font-serif font-medium">Strategy</h4>
-                            <p className="text-sm text-muted">Aligning HR with business goals</p>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="rounded-lg bg-white/70 border border-border p-4">
-                        <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                            <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <h4 className="font-serif font-medium">Compliance</h4>
-                            <p className="text-sm text-muted">Mitigating legal risks</p>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="rounded-lg bg-white/70 border border-border p-4">
-                        <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                            <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <h4 className="font-serif font-medium">Culture</h4>
-                            <p className="text-sm text-muted">Building engaging workplaces</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <img
+                      src="/liftapp (7).png"
+                      alt="HRFluent - Professional HR Consulting"
+                      className="relative z-10 h-full w-full object-cover"
+                    />
                   </div>
                 </div>
               </motion.div>
