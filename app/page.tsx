@@ -35,22 +35,31 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-section-desktop sm:py-section-desktop hero-gradient">
-        <Container>
-          <div className="glass-card rounded-card border border-border p-8 md:p-12 shadow-soft">
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-              {/* Left side: H1 + subline + CTA */}
+      <section className="relative">
+        {/* Image Container */}
+        <div className="relative">
+          <img
+            src="/hero.jpg"
+            alt="HRFluent - Professional HR Consulting"
+            className="w-full h-auto"
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+          
+          {/* Text Content Overlaid on Image */}
+          <div className="absolute inset-0 container mx-auto px-4 md:px-8 lg:px-12">
+            <div className="flex items-center h-full">
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45 }}
-                className="flex flex-col justify-center"
+                className="max-w-2xl"
               >
-                <div className="mb-6 flex items-center gap-2">
-                  <div className="h-px w-8 bg-primary" />
-                  <div className="h-2 w-2 rounded-full bg-primary" />
+                <div className="mb-3 flex items-center gap-2">
+                  <div className="h-px w-6 bg-primary" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                 </div>
-                <h1 className="mb-6 font-serif text-[34px] md:text-[52px] lg:text-[60px] leading-[1.05]">
+                <h1 className="mb-3 font-serif text-[24px] md:text-[36px] lg:text-[42px] leading-[1.1] text-white">
                   {content.home.hero.h1.split('<br>').map((line, index) => (
                     <span key={index}>
                       {line}
@@ -58,60 +67,41 @@ export default function HomePage() {
                     </span>
                   ))}
                 </h1>
-                <div className="h-px w-24 bg-primary mb-6" />
-                <p className="mb-8 text-[16px] md:text-[18px] leading-[1.7] text-muted lg:text-lg">
+                <div className="h-px w-16 bg-primary mb-3" />
+                <p className="mb-4 text-[14px] md:text-[15px] leading-[1.5] text-gray-200">
                   {content.home.hero.body}
                 </p>
-                <div className="mb-8 flex flex-wrap gap-4">
-                  <LinkButton size="lg" href="/contact">
-                    {content.home.hero.cta}
-                  </LinkButton>
-                </div>
                 {/* Trust row with pills */}
-                <div className="flex flex-wrap gap-3">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-background/50 border border-border px-4 py-2 text-sm text-muted">
-                    <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="mb-4 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs text-white">
+                    <svg className="h-3 w-3 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
                     </svg>
                     Fractional HR
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-background/50 border border-border px-4 py-2 text-sm text-muted">
-                    <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs text-white">
+                    <svg className="h-3 w-3 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
                     </svg>
                     Remote-first
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-background/50 border border-border px-4 py-2 text-sm text-muted">
-                    <svg className="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1 text-xs text-white">
+                    <svg className="h-3 w-3 text-primary" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10 1L12 6L17 6L14 9L16 14L10 11L4 14L5 9L1 6L6 6L8 1Z" fill="currentColor"/>
                     </svg>
                     Data-driven
                   </span>
                 </div>
-              </motion.div>
-
-              {/* Right side: Hero Image */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.15 }}
-                className="relative flex items-center justify-center"
-              >
-                <div className="relative h-full w-full">
-                  <div className="relative h-[700px] w-full rounded-card overflow-hidden border border-border bg-white/70 shadow-soft">
-                    <div className="absolute -top-4 -left-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
-                    <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-card bg-primary/10 blur-xl" />
-                    <img
-                      src="/liftapp-7.png"
-                      alt="HRFluent - Professional HR Consulting"
-                      className="relative z-10 h-full w-full object-cover"
-                    />
-                  </div>
+                {/* Button */}
+                <div className="flex flex-wrap gap-3">
+                  <LinkButton size="lg" href="/contact">
+                    {content.home.hero.cta}
+                  </LinkButton>
                 </div>
               </motion.div>
             </div>
           </div>
-        </Container>
+        </div>
       </section>
 
       <div className="gradient-line" />
@@ -134,11 +124,7 @@ export default function HomePage() {
             {content.home.valueProps.map((prop, index) => (
               <motion.div key={index} variants={fadeInUp} className="h-full">
                 <FeatureCard
-                  icon={
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L2 7L12 17L22 7L17 12L12 2Z" fill="currentColor"/>
-                    </svg>
-                  }
+                  image={prop.image}
                   title={prop.title}
                   description={prop.body}
                   className="h-full"
@@ -164,43 +150,18 @@ export default function HomePage() {
           >
             <div className="rounded-card border border-border bg-white/70 p-8">
               <div className="mb-8">
-                <div className="flex items-start gap-6">
-                  {/* Vertical accent line with dots */}
-                  <div className="flex flex-col gap-6">
-                    <div className="h-px w-8 bg-primary" />
-                    <div className="flex flex-col gap-4">
-                      <div className="h-2 w-2 rounded-full bg-primary" />
-                      <div className="h-2 w-2 rounded-full bg-primary" />
-                      <div className="h-2 w-2 rounded-full bg-primary" />
-                    </div>
-                  </div>
-                  
-                  {/* Partners chips */}
-                  <div className="flex-1">
-                    <div className="flex flex-wrap gap-3">
-                      {content.home.who.items.map((item, index) => (
-                        <span
-                          key={index}
-                          className="inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-4 py-2 text-sm text-muted hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-200"
-                        >
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8 1L10 6L15 6L11 9L12 14L8 11L4 14L5 9L1 6L6 6L8 1Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                {/* Partners list with bullet points */}
+                <ul className="space-y-3">
+                  {content.home.who.items.map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start gap-3 text-sm text-muted hover:text-primary transition-all duration-200"
+                    >
+                      <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
               
               {/* Logo Ticker */}
@@ -221,17 +182,17 @@ export default function HomePage() {
           {
             number: 1,
             title: "Discovery",
-            description: "We start with a deep dive into your organization's people challenges and goals.",
+            description: "We start with a deep dive into your organization's people challenges and goals. Through comprehensive assessments, stakeholder interviews, and data analysis, we identify gaps, opportunities, and key priorities that will drive your HR transformation forward.",
           },
           {
             number: 2,
             title: "Strategy",
-            description: "Developing a tailored HR strategy aligned with your business objectives.",
+            description: "Developing a tailored HR strategy aligned with your business objectives. We create actionable roadmaps covering talent acquisition, performance management, employee engagement, compliance, and organizational development - all customized to your unique culture and growth stage.",
           },
           {
             number: 3,
             title: "Implementation",
-            description: "Executing the plan with ongoing support and continuous improvement.",
+            description: "Executing the plan with ongoing support and continuous improvement. We work alongside your team to implement solutions, train stakeholders, establish metrics, and refine processes based on real-world feedback to ensure sustainable long-term success.",
           },
         ]}
       />

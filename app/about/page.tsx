@@ -46,17 +46,28 @@ export default function AboutPage() {
       {/* About Oana Section */}
       <section className="py-section-desktop section-alt">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.45 }}
+          >
+            <SectionHeader
+              title={content.about.oana.h2}
+              description={content.about.oana.intro}
+            />
+          </motion.div>
+
+          {/* 2x2 Grid Layout */}
+          <div className="grid gap-6 md:grid-cols-2 mt-12">
+            {/* Row 1, Col 1: About Oana Breen */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.45 }}
+              className="rounded-card border border-border bg-white/70 p-8 shadow-soft"
             >
-              <SectionHeader
-                title={content.about.oana.h2}
-                description={content.about.oana.intro}
-              />
               <p className="mb-4 text-[16px] md:text-[18px] leading-[1.7] text-muted">
                 {content.about.oana.blend}
               </p>
@@ -81,158 +92,180 @@ export default function AboutPage() {
               </ul>
             </motion.div>
 
+            {/* Row 1, Col 2: liftapp-4 Image */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.45, delay: 0.15 }}
-              className="flex flex-col gap-6"
+              transition={{ duration: 0.45, delay: 0.1 }}
+              className="relative h-[500px] md:h-auto md:min-h-[500px] rounded-card overflow-hidden border border-border bg-white/70 shadow-soft"
             >
-              <div className="relative h-[700px] rounded-card overflow-hidden border border-border bg-white/70 shadow-soft">
-                <img
-                  src="/liftapp-4.jpeg"
-                  alt="Oana Breen - Professional"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <Card variant="elevated" className="flex-1">
-                <h3 className="mb-6 font-serif text-[20px] md:text-[24px]">Capabilities</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-medium">People Strategy</p>
-                      <p className="text-sm text-muted">
-                        KPI development and alignment
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-medium">Compliance</p>
-                      <p className="text-sm text-muted">
-                        Policy governance and audits
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-medium">Culture & DEI</p>
-                      <p className="text-sm text-muted">
-                        Engagement and inclusion
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-medium">Employee Experience</p>
-                      <p className="text-sm text-muted">
-                        Onboarding and lifecycle
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-medium">Compensation & Benefits</p>
-                      <p className="text-sm text-muted">
-                        Benchmarking and wellness
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-medium">Leadership Development</p>
-                      <p className="text-sm text-muted">
-                        Coaching and team growth
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-medium">People Operations</p>
-                      <p className="text-sm text-muted">
-                        HRIS and analytics
-                      </p>
-                    </div>
+              <img
+                src="/liftapp-4.jpeg"
+                alt="Oana Breen - Professional"
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
+
+            {/* Row 2, Col 1: liftapp-7 Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.45, delay: 0.2 }}
+              className="relative h-[500px] md:h-auto md:min-h-[500px] rounded-card overflow-hidden border border-border bg-white/70 shadow-soft"
+            >
+              <img
+                src="/liftapp-7.png"
+                alt="Oana Breen - Consultation"
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
+
+            {/* Row 2, Col 2: Capabilities */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.45, delay: 0.3 }}
+              className="rounded-card border border-border bg-white/70 p-8 shadow-soft"
+            >
+              <h3 className="mb-6 font-serif text-[20px] md:text-[24px]">Capabilities</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-medium">People Strategy</p>
+                    <p className="text-sm text-muted">
+                      KPI development and alignment
+                    </p>
                   </div>
                 </div>
-              </Card>
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-medium">Compliance</p>
+                    <p className="text-sm text-muted">
+                      Policy governance and audits
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-medium">Culture & DEI</p>
+                    <p className="text-sm text-muted">
+                      Engagement and inclusion
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-medium">Employee Experience</p>
+                    <p className="text-sm text-muted">
+                      Onboarding and lifecycle
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-medium">Compensation & Benefits</p>
+                    <p className="text-sm text-muted">
+                      Benchmarking and wellness
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-medium">Leadership Development</p>
+                    <p className="text-sm text-muted">
+                      Coaching and team growth
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="mt-1 h-5 w-5 flex-shrink-0 text-primary"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 1L12 6L17 6L13 9L14 14L10 11L6 14L7 9L3 6L8 6L10 1Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-medium">People Operations</p>
+                    <p className="text-sm text-muted">
+                      HRIS and analytics
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </Container>
@@ -311,22 +344,6 @@ export default function AboutPage() {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="relative h-[400px] rounded-card overflow-hidden border border-border bg-white/70">
-                    <img
-                      src="/liftapp-4.jpeg"
-                      alt="Oana Breen - Professional"
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <div className="relative h-[400px] rounded-card overflow-hidden border border-border bg-white/70">
-                    <img
-                      src="/liftapp-7.png"
-                      alt="Oana Breen - Consultation"
-                      className="h-full w-full object-cover"
-                    />
                   </div>
                 </div>
               </div>

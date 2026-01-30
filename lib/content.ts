@@ -25,18 +25,22 @@ export const content = {
       {
         title: "Strategic & Collaborative Leadership",
         body: "We work directly with leadership teams to define people KPIs, support business goals, and align HR strategy with organizational objectives.",
+        image: "/strategic.jpg",
       },
       {
         title: "Compliance without fear",
-        body: "Federal, state, and local compliance handled with rigor, discretion, and clarity — so you can focus on running the business.",
+        body: "Federal, state, and local compliance handled with rigor, discretion, and clarity — so you can focus on running business.",
+        image: "/compliance.png",
       },
       {
         title: "Culture that's lived, not written",
         body: "We help organizations bring values, mission, and inclusion to life through real policies, programs, and leadership behaviors.",
+        image: "/culture.png",
       },
       {
         title: "End-to-end employee experience",
         body: "From onboarding to growth and retention, we design inclusive, scalable employee life-cycle frameworks that actually stick.",
+        image: "/end-to-end.png",
       },
     ],
     who: {
@@ -170,7 +174,7 @@ export const content = {
       intro: "People strategy should be practical, ethical, and human.",
       belief: "HRFluent believes HR should:",
       beliefItems: [
-        "Protect the organization and the employee",
+        "Protect organization and employee",
         "Support leaders, not slow them down",
         "Create clarity, not confusion",
         "Scale with intention, not chaos",
@@ -182,7 +186,7 @@ export const content = {
       h1: "Let's talk about your people challenges",
       body: "Whether you need fractional HR leadership, compliance support, or a strategic partner to help your organization grow, HRFluent is ready to help.",
     },
-    intro: "Tell us a bit about your organization, your team size, and the people challenges you're facing. We'll explore how HRFluent can support your goals.",
+    intro: "Tell us a bit about your organization, your team size, and people challenges you're facing. We'll explore how HRFluent can support your goals.",
     cta: "Schedule a consultation",
     form: {
       name: "Name",

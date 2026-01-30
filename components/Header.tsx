@@ -25,8 +25,12 @@ export function Header() {
       <header className="sticky top-0 z-50 border-b border-border bg-[rgba(251,251,247,0.75)] backdrop-blur-[10px]">
         <Container>
           <div className="flex items-center justify-between py-4">
-            <Link href="/" className="font-serif text-xl font-medium text-text">
-              {content.brand.name}
+            <Link href="/" className="flex items-center">
+              <img 
+                src="/logohr.png" 
+                alt={content.brand.name}
+                className="h-12 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
