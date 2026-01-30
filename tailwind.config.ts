@@ -44,8 +44,8 @@ const config: Config = {
         "soft-xl": "0 8px 32px rgba(0, 0, 0, 0.08)",
       },
       spacing: {
-        "section-desktop": "120px",
-        "section-mobile": "72px",
+        "section-desktop": "80px",
+        "section-mobile": "48px",
         "container": "1200px",
       },
       maxWidth: {

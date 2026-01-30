@@ -24,8 +24,7 @@ export function ProcessStrip({ steps, className }: ProcessStripProps) {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-2xl font-semibold text-primary">
                 {step.number}
               </div>
-              <h3 className="mb-2 text-xl font-semibold">{step.title}</h3>
-              <p className="text-base leading-relaxed text-muted">{step.description}</p>
+              <h3 className="text-xl font-semibold">{step.title}</h3>
             </div>
           ))}
         </div>
